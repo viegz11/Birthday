@@ -1,0 +1,62 @@
+/**
+ * Cinematic Film Lens & Atmosphere Styles
+ * Grain overlays, vignette, bloom overlays, letterbox bars.
+ */
+
+.film-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 990;
+  opacity: 0.045;
+  background-image: url('/grain.png');
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+
+.film-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 980;
+  background: radial-gradient(circle at center, transparent 40%, rgba(12, 6, 12, 0.45) 85%, rgba(10, 4, 10, 0.75) 100%);
+}
+
+.film-bloom {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 985;
+  background: radial-gradient(circle at center, rgba(255, 230, 180, 0.95), rgba(234, 88, 128, 0.6) 40%, transparent 75%);
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: center center;
+}
+
+.film-rose-flood {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff6f97, #b8234e 65%, #5c1027 100%);
+  pointer-events: none;
+  z-index: 986;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.film-letterbox {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: clamp(8px, 2.5vw, 24px);
+  background: #080308;
+  z-index: 995;
+  pointer-events: none;
+}
+.film-letterbox-top { top: 0; }
+.film-letterbox-bottom { bottom: 0; }

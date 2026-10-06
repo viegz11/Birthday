@@ -1,0 +1,184 @@
+/**
+ * Main Application Stylesheet & Global Reset
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Great+Vibes&display=swap');
+@import './theme.css';
+@import './lens.css';
+@import './acts.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  background-color: var(--color-canvas);
+  color: var(--color-text-light);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#stage {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Sound Control Button */
+.sound-toggle-btn {
+  position: fixed;
+  top: calc(var(--safe-top) + 16px);
+  right: calc(var(--safe-right) + 16px);
+  z-index: 1000;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 197, 130, 0.45);
+  background: rgba(28, 17, 28, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--color-champagne-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(232, 197, 130, 0.2);
+}
+
+.sound-toggle-btn:hover {
+  background: rgba(45, 25, 45, 0.95);
+  border-color: var(--color-champagne-gold);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 18px rgba(232, 197, 130, 0.4);
+  transform: scale(1.08);
+}
+
+.sound-toggle-btn:active {
+  transform: scale(0.92);
+}
+
+.sound-toggle-btn.sound-active {
+  border-color: rgba(232, 197, 130, 0.65);
+  color: #ffdf9e;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 16px rgba(232, 197, 130, 0.35);
+}
+
+.sound-toggle-btn.sound-muted {
+  border-color: rgba(255, 100, 140, 0.35);
+  color: rgba(255, 180, 200, 0.65);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.sound-toggle-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+
+/* Foundation Ready Dev State */
+.foundation-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+  max-width: 90vw;
+  width: 420px;
+  background: rgba(28, 17, 28, 0.85);
+  border: 1px solid rgba(232, 197, 130, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+  z-index: 50;
+  animation: fadeInSoft 0.8s ease-out;
+}
+
+.foundation-badge h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 5vw, 24px);
+  color: var(--color-champagne-gold);
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.foundation-badge p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.foundation-badge .status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(234, 88, 128, 0.15);
+  border: 1px solid rgba(234, 88, 128, 0.4);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--color-rose-subtle);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.foundation-badge .status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+@keyframes fadeInSoft {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Viewport Constraints */
+@media (max-width: 480px) {
+  .sound-toggle-btn {
+    top: calc(var(--safe-top) + 12px);
+    right: calc(var(--safe-right) + 12px);
+    width: 40px;
+    height: 40px;
+  }
+}

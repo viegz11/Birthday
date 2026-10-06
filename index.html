@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <title>Happy Birthday ♥ — A Cinematic Journey</title>
+  <meta name="description" content="A cinematic birthday interactive film in 9 acts celebrating a wonderful school friend." />
+  <meta name="theme-color" content="#120b12" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Happy Birthday ♥ — A Cinematic Journey" />
+  <meta property="og:description" content="A cinematic birthday interactive film in 9 acts celebrating a wonderful school friend." />
+  <meta property="og:image" content="/images/kulla1.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Happy Birthday ♥ — A Cinematic Journey" />
+  <meta name="twitter:description" content="A cinematic birthday interactive film in 9 acts celebrating a wonderful school friend." />
+  <meta name="twitter:image" content="/images/kulla1.jpg" />
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Great+Vibes&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="app">
+    <!-- Sound toggle button -->
+    <button class="sound-toggle-btn" id="soundToggle" type="button" aria-label="Toggle Sound">
+      <svg class="sound-on-svg" viewBox="0 0 24 24">
+        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg class="sound-off-svg" viewBox="0 0 24 24" style="display: none;">
+        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+        <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Main Stage (Mount Point for Acts 0 through 8) -->
+    <main id="stage"></main>
+
+    <!-- Transition Overlays -->
+    <div class="film-rose-flood" id="roseFlood" aria-hidden="true"></div>
+    <div class="film-bloom" id="lightBloom" aria-hidden="true"></div>
+
+    <!-- Cinematic Film Lens & Grade -->
+    <div class="film-letterbox film-letterbox-top" aria-hidden="true"></div>
+    <div class="film-letterbox film-letterbox-bottom" aria-hidden="true"></div>
+    <div class="film-vignette" aria-hidden="true"></div>
+    <div class="film-grain" aria-hidden="true"></div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+/**
+ * Theme Variables & Color Design Tokens
+ */
+
+:root {
+  /* Color Palette - Warm, Elegant, Friendship-Centered */
+  --color-ivory: #fffbf7;
+  --color-canvas: #120b12;
+  --color-canvas-light: #1c111c;
+  --color-blush: #ffe8ee;
+  --color-rose-subtle: #f8c3d1;
+  --color-rose: #ea5880;
+  --color-deep-rose: #b8234e;
+  --color-wine: #5c1027;
+  --color-champagne-gold: #e8c582;
+  --color-gold-bright: #ffd98f;
+  --color-warm-brown: #3d2218;
+  --color-text-light: #fef7ee;
+  --color-text-muted: #d4bcc8;
+  --color-text-dark: #2b141e;
+
+  /* Typography Fonts */
+  --font-script: 'Great Vibes', cursive;
+  --font-serif: 'Fraunces', serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+
+  /* Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Animation Easings */
+  --ease-cinematic: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Device Safe Areas */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
